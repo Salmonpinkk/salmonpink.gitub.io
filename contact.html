@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/8e8abfc17e.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCHub</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAao/8AAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAEQARAAEQAAARABEAARAAABEAEQABEAAAEQARAAEQAAAREREAARERABEREQABEREQEQARAAEQARARABEAARABEBEAEQABEREQEQARAAEREQARABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
+
+
+    <!-- FONT!!!-->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;500;600&display=swap" rel="stylesheet">
+
+    <!--- lint to css file -->
+
+    <link rel="stylesheet" href="contactstyle.css">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+
+
+    <header>
+        
+
+        <input type="checkbox" name="" id="toggler">
+
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="index.html" class="logo">PC<span>Hub</span></span></a>
+
+        <nav class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="index.html#about">ABOUT</a>
+            <a href="index.html#products">PRODUCTS</a>
+            <a href="#contact">CONTACT US</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+
+    </header>
+
+    <body>
+        <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h1> CONTACT US</h1>
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="phone" placeholder="Phone number" required>
+                <textarea id="message" rows="4" placeholder="How can we help you?" ></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "onlaeone@gmail.com",
+                Password : "7F6F63C7B4B2689B6D66D83F766B9CC472E6",
+                To : 'davidebrianne@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact Form Enquiry",
+                Body : "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+            }
+        </script>
+
+
+    </body>
+
+
+
